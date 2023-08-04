@@ -86,21 +86,11 @@ Session Management (Again):Once again, the code initializes a session and checks
 5. index.php
 Session Start and User Check: The code starts with session_start() to initiate a session. Sessions are used to persist data across multiple requests. The code checks if a session variable named "user" is not set (!isset($_SESSION["user"])). This is done to ensure that only logged-in users can access the dashboard. If the user is not logged in, the code redirects them to the login page using header("Location: login.php"). This ensures that unauthorized users are redirected to the login page.
 
-HTML Structure: The code follows the standard HTML structure. It includes a Bootstrap CSS framework for styling and a custom CSS file named "style.css".
-The page title is set to "User Dashboard".
+HTML Structure: The code follows the standard HTML structure. It includes a Bootstrap CSS framework for styling and a custom CSS file named "style.css". The page title is set to "User Dashboard".Dashboard Content: Inside the <div class="container"> element, the code displays a welcoming message in an heading, indicating that the user is on the dashboard. It also includes a "Logout" button with the class "btn btn-warning". This button provides a link to a "logout.php" page for users to log out from the dashboard.
 
-Dashboard Content:
-Inside the <div class="container"> element, the code displays a welcoming message in an <h1> heading, indicating that the user is on the dashboard.
-It also includes a "Logout" button with the class "btn btn-warning". This button provides a link to a "logout.php" page for users to log out from the dashboard.
-Logout Link:
-
-The "Logout" button (<a href="logout.php" class="btn btn-warning">Logout</a>) provides a link to a "logout.php" page. This is likely where the user's session will be terminated to log them out.
+Logout Link: The "Logout" button (<a href="logout.php" class="btn btn-warning">Logout</a>) provides a link to a "logout.php" page. This is likely where the user's session will be terminated to log them out.
 
 6. Logout.php
-
 Session Start:The code starts with session_start() to initiate a session. Although not strictly necessary for this particular code, it's a common practice to ensure that session handling is available.
-
 Session Destroy:The session_destroy() function is used to completely destroy the current session, including all the session variables and data associated with it.
-
-Redirect to Login Page:
-After destroying the session, the header("Location: login.php") line is used to immediately redirect the user to the login page (login.php). This ensures that after logging out, the user is directed back to the login page.
+Redirect to Login Page: After destroying the session, the header("Location: login.php") line is used to immediately redirect the user to the login page (login.php). This ensures that after logging out, the user is directed back to the login page.
